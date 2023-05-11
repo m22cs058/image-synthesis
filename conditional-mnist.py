@@ -8,15 +8,9 @@ from torchvision import transforms
 from torch import autograd
 from torch.autograd import Variable
 from torchvision.utils import make_grid
+from datasets.mnist import dataloader
 
-transform = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Normalize([0.5], [0.5])
-])
-
-batch_size = 32
-data_loader = torch.utils.data.DataLoader(MNIST('data', train=True, download=True, transform=transform),
-                                          batch_size=batch_size, shuffle=True)
+data_loader = dataloader()
 
 class Discriminator(nn.Module):
     def __init__(self):

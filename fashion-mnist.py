@@ -6,11 +6,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from torchvision import datasets
 import torchvision.transforms as transforms
+from datasets import fmnist
 
-transform = transforms.ToTensor()
-train = datasets.FashionMNIST(root = '.', train = True, download = True, 
-                       transform = transform)
-train_loader = torch.utils.data.DataLoader(train, batch_size = 256)
+train_loader = fmnist.dataloader()
 
 class Generator(nn.Module):
   def __init__(self):
