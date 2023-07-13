@@ -27,3 +27,9 @@ Create a conda environment
 Install Necessary Libraries
 
     pip install -r requirements.txt
+
+
+### Dataset and Result
+MNIST: Apply DCGAN and It give good synthesis image of MNIST
+
+CELEBA-FACE: On some image it mode collapse, and non-convergence
